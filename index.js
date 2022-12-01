@@ -15,7 +15,7 @@ button.addEventListener("click", e => {
         })
         .catch(error => {
             console.log("ERROR:", error);
-        })
+        });
 });
 
 function createGameElement(game) {
@@ -29,17 +29,18 @@ function createGameElement(game) {
 
     // creates new elements
     const gameDiv = document.createElement("div");
-    const h1 = document.createElement("h1");
+    const h2 = document.createElement("h2");
     const img = document.createElement("img");
     const cheap = document.createElement("p");
 
     // assigns text value to elements
-    h1.textContent = gameTitle;
+    h2.textContent = gameTitle;
     img.src = gameThumbnail;
-    cheap.textContent = cheapestPrice;
+    cheap.textContent = `Cheapest Price: ${cheapestPrice}`;
 
     // appends it all together
-    gameDiv.appendChild(h1);
+    gameDiv.classList.add("game-cards")
+    gameDiv.appendChild(h2);
     gameDiv.appendChild(img);
     gameDiv.appendChild(cheap);
     searchResultsStorage.appendChild(gameDiv);
