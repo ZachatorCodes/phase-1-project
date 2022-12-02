@@ -39,10 +39,12 @@ button {
     text-align: center;
     word-break: break-word;
     background-image: linear-gradient(#a8e063, #56ab2f);
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .game-cards img {
-    height: 50px;
+    height: 75px;
     border-radius: 5px;
 }
 
