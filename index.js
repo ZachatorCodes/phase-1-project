@@ -16,6 +16,7 @@ button.addEventListener("click", e => {
         .catch(error => {
             console.log("ERROR:", error);
         });
+    document.querySelector("form").reset();
 });
 
 function createGameElement(game) {
