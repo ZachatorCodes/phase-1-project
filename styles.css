@@ -1,8 +1,7 @@
 h1 {
     text-align: center;
     font-size: 50px;
-    margin: 0;
-    padding: 0;
+    margin: 0 0 10px 0;
 }
 
 input {
@@ -19,7 +18,7 @@ button {
 }
 
 #search-div {
-    padding: 5px;
+    margin: 5px 0 5px 0;
     text-align: center;
 }
 
@@ -44,11 +43,12 @@ button {
 
 .game-cards img {
     height: 50px;
+    border-radius: 5px;
 }
 
 #search-results {
     display: grid;
-    padding: 0 12px;
+    padding: 12px;
     grid-gap: 12px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
