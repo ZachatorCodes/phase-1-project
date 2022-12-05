@@ -8,6 +8,7 @@ button.addEventListener("click", e => {
     fetch(`https://www.cheapshark.com/api/1.0/games?title=${searchText}`)
         .then(response => response.json())
         .then(data => {
+            document.querySelector("form").reset();
             searchResultsStorage.innerHTML = "";
             data.forEach(gameObj => {
                 createGameElement(gameObj);
@@ -16,7 +17,6 @@ button.addEventListener("click", e => {
         .catch(error => {
             console.log("ERROR:", error);
         });
-    document.querySelector("form").reset();
 });
 
 function createGameElement(game) {
@@ -24,25 +24,32 @@ function createGameElement(game) {
     const gameTitle = game.external;
     const gameThumbnail = game.thumb;
     const gameID = game.gameID;
-    const steamAppID = game.steamAppID;
     const cheapestPrice = game.cheapest;
-    const cheapestDeal = game.cheapestDealID;
 
     // creates new elements
     const gameDiv = document.createElement("div");
     const h2 = document.createElement("h2");
     const img = document.createElement("img");
     const cheap = document.createElement("p");
+    const clickForMore = document.createElement("p");
 
     // assigns text value to elements
     h2.textContent = gameTitle;
     img.src = gameThumbnail;
     cheap.textContent = `Cheapest Price: ${cheapestPrice}`;
+    clickForMore.textContent = "Click For More";
 
     // appends it all together
     gameDiv.classList.add("game-cards")
+    gameDiv.setAttribute("id", gameID);
     gameDiv.appendChild(h2);
     gameDiv.appendChild(img);
     gameDiv.appendChild(cheap);
+    gameDiv.appendChild(clickForMore);
+    clickForMore.addEventListener("click", findGameInfo);
     searchResultsStorage.appendChild(gameDiv);
+}
+
+function findGameInfo(event) {
+   const gameID = event.target.parentElement.id;
 }
