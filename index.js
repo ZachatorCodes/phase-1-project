@@ -77,6 +77,9 @@ function handleGameInfo(game) {
     const h1 = document.createElement("h1");
     const img = document.createElement("img");
     const h4 = document.createElement("h4");
+    const basicGameInfo = document.createElement("div");
+
+    basicGameInfo.id = "basic-game-info";
 
     // sets element text content
     h1.textContent = gameTitle;
@@ -84,9 +87,11 @@ function handleGameInfo(game) {
     img.src = gameThumbnail;
 
     // appends it all together
-    gameInfo.appendChild(h1);
-    gameInfo.appendChild(h4);
-    gameInfo.appendChild(img);
+    basicGameInfo.appendChild(h1);
+    basicGameInfo.appendChild(h4);
+    basicGameInfo.appendChild(img);
+
+    gameInfo.appendChild(basicGameInfo);
 
     // handles all of the deal objects within the deals array
     arrayOfDeals.forEach(dealInfo => {
