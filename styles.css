@@ -48,6 +48,10 @@ button {
     border-radius: 5px;
 }
 
+.game-cards button {
+    margin-bottom: 10px;
+}
+
 #search-results {
     display: grid;
     padding: 12px;
@@ -61,16 +65,16 @@ body {
     background-attachment: fixed;
 }
 
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
 .left-half {
-    position: absolute;
-    left: 0;
-    width: 45%;
-    padding-right: 10px;
+    grid-column: 1;
 }
 
 .right-half {
-    position: absolute;
-    right: 0;
-    width: 45%;
-    padding-left: 10px;
+    grid-column: 2;
 }

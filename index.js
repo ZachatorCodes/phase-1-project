@@ -31,7 +31,7 @@ function createGameElement(game) {
     const h2 = document.createElement("h2");
     const img = document.createElement("img");
     const cheap = document.createElement("p");
-    const clickForMore = document.createElement("p");
+    const clickForMore = document.createElement("button");
 
     // assigns text value to elements
     h2.textContent = gameTitle;
@@ -55,9 +55,13 @@ function findGameInfo(event) {
    fetch(`https://www.cheapshark.com/api/1.0/games?id=${gameID}`)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        handleGameInfo(data);
     })
     .catch(error => {
         console.log("ERROR:", error);
     })
+}
+
+function handleGameInfo(game) {
+    console.log(game);
 }
