@@ -71,10 +71,10 @@ body {
     grid-gap: 20px;
 }
 
-/* .left-half {
-    grid-column: 1;
+#game-info {
+    text-align: center;
 }
 
-.right-half {
-    grid-column: 2;
-} */
+#game-info img {
+    width: 200px;
+}
