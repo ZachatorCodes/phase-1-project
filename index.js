@@ -37,7 +37,7 @@ function createGameElement(game) {
     // assigns text value to elements
     h2.textContent = gameTitle;
     img.src = gameThumbnail;
-    cheap.textContent = `Cheapest Price: ${cheapestPrice}`;
+    cheap.textContent = `Cheapest Available Price: ${cheapestPrice}`;
     clickForMore.textContent = "Click For More";
 
     // appends it all together
@@ -71,14 +71,18 @@ function handleGameInfo(game) {
     const gameTitle = game.info.title;
     const gameThumbnail = game.info.thumb;
     const arrayOfDeals = game.deals;
+    const cheapestPrice = game.cheapestPriceEver.price;
 
     const h1 = document.createElement("h1");
     const img = document.createElement("img");
+    const h4 = document.createElement("h4");
 
     h1.textContent = gameTitle;
+    h4.textContent = `Cheapest Price Ever: ${cheapestPrice}`;
     img.src = gameThumbnail;
 
     gameInfo.appendChild(h1);
+    gameInfo.appendChild(h4);
     gameInfo.appendChild(img);
 
     arrayOfDeals.forEach(dealInfo => {
