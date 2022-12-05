@@ -60,3 +60,17 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.left-half {
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-right: 10px;
+}
+
+.right-half {
+    position: absolute;
+    right: 0;
+    width: 45%;
+    padding-left: 10px;
+}
