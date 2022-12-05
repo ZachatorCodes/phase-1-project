@@ -73,8 +73,13 @@ body {
 
 #game-info {
     text-align: center;
+    padding-top: 15px;
 }
 
 #game-info img {
     width: 200px;
+}
+
+h4 {
+    margin: 0 0 20px 0;
 }
