@@ -73,18 +73,22 @@ function handleGameInfo(game) {
     const arrayOfDeals = game.deals;
     const cheapestPrice = game.cheapestPriceEver.price;
 
+    // creates needed elements
     const h1 = document.createElement("h1");
     const img = document.createElement("img");
     const h4 = document.createElement("h4");
 
+    // sets element text content
     h1.textContent = gameTitle;
     h4.textContent = `Cheapest Price Ever: ${cheapestPrice}`;
     img.src = gameThumbnail;
 
+    // appends it all together
     gameInfo.appendChild(h1);
     gameInfo.appendChild(h4);
     gameInfo.appendChild(img);
 
+    // handles all of the deal objects within the deals array
     arrayOfDeals.forEach(dealInfo => {
         handleDeal(dealInfo);
     })
