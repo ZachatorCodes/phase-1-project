@@ -68,12 +68,12 @@ body {
 #container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    /* grid-gap: 12px; */
 }
 
 #game-info {
     text-align: center;
-    padding-top: 15px;
+    padding: 12px;
 }
 
 #game-info img {
