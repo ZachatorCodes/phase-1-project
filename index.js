@@ -52,4 +52,12 @@ function createGameElement(game) {
 
 function findGameInfo(event) {
    const gameID = event.target.parentElement.id;
+   fetch(`https://www.cheapshark.com/api/1.0/games?id=${gameID}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.log("ERROR:", error);
+    })
 }
