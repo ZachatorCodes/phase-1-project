@@ -1,6 +1,7 @@
 const searchResultsStorage = document.getElementById("search-results");
 const button = document.getElementById("search-button");
 const searchBar = document.getElementById("search-bar");
+const gameInfo = document.getElementById("game-info");
     
 button.addEventListener("click", e => {
     e.preventDefault();
@@ -50,11 +51,13 @@ function createGameElement(game) {
     searchResultsStorage.appendChild(gameDiv);
 }
 
+// handles fetching game info for clicked on game
 function findGameInfo(event) {
    const gameID = event.target.parentElement.id;
    fetch(`https://www.cheapshark.com/api/1.0/games?id=${gameID}`)
     .then(response => response.json())
     .then(data => {
+        gameInfo.innerHTML = "";
         handleGameInfo(data);
     })
     .catch(error => {
@@ -62,6 +65,31 @@ function findGameInfo(event) {
     })
 }
 
+// handles all of the data that fetching the game returns
 function handleGameInfo(game) {
+    //grabs game info from game object
+    const gameTitle = game.info.title;
+    const gameThumbnail = game.info.thumb;
+    const arrayOfDeals = game.deals;
+
+    const h1 = document.createElement("h1");
+    const img = document.createElement("img");
+
+    h1.textContent = gameTitle;
+    img.src = gameThumbnail;
+
+    gameInfo.appendChild(h1);
+    gameInfo.appendChild(img);
+
+    arrayOfDeals.forEach(dealInfo => {
+        handleDeal(dealInfo);
+    })
+
     console.log(game);
+    console.log(gameTitle);
+    console.log(gameThumbnail);
+}
+
+function handleDeal(deal) {
+    console.log(deal);
 }
