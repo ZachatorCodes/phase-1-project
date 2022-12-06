@@ -2,6 +2,19 @@ const searchResultsStorage = document.getElementById("search-results");
 const button = document.getElementById("search-button");
 const searchBar = document.getElementById("search-bar");
 const gameInfo = document.getElementById("game-info");
+let storesArray;
+
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("https://www.cheapshark.com/api/1.0/stores")
+    .then(response => response.json())
+    .then(data => {
+        storesArray = data;
+    })
+    .catch(error => {
+        console.log("ERROR:", error);
+    })
+})
+
     
 button.addEventListener("click", e => {
     e.preventDefault();
