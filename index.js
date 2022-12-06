@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("ERROR:", error); 
     })
 })
-
-    
+ 
 button.addEventListener("click", e => {
     e.preventDefault();
     const searchText = searchBar.value;
@@ -137,6 +136,13 @@ function handleGameInfo(game) {
                         const p3 = document.createElement("p");
                         p3.textContent = `Discount: ${savingsPercent}%`;
                         specificGameDeal.appendChild(p3);
+
+                        const dealButton = document.createElement("button");
+                        dealButton.textContent = "Visit Deal";
+                        dealButton.addEventListener("click", () => {
+                            window.open(`https://www.cheapshark.com/redirect?dealID=${dealID}`, "_blank").focus();
+                        });
+                        specificGameDeal.appendChild(dealButton);
 
                         deals.appendChild(specificGameDeal);
                     }
