@@ -125,10 +125,6 @@ function handleGameInfo(game) {
                     savingsPrice = parseFloat(dealInfo.savings).toFixed(2);
                     
                     if (savingsPrice !== 0) {
-                        const h5 = document.createElement("h5");
-                        h5.textContent = storeName;
-                        specificGameDeal.appendChild(h5);
-
                         const img = document.createElement("img");
                         img.src = storeImage;
                         specificGameDeal.appendChild(img);
