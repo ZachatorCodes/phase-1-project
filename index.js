@@ -93,7 +93,6 @@ function handleGameInfo(game) {
     const h4 = document.createElement("h4");
     const basicGameInfo = document.createElement("div");
     const deals = document.createElement("div");
-    const dealH3 = document.createElement("h3");
 
     basicGameInfo.id = "basic-game-info";
     deals.id = "deals";
@@ -102,14 +101,11 @@ function handleGameInfo(game) {
     h1.textContent = gameTitle;
     h4.textContent = `Cheapest Price Ever: $${cheapestPrice}`;
     img.src = gameThumbnail;
-    dealH3.textContent = "Deals";
-    dealH3.style.textDecoration = "underline";
 
     // appends it all together
     basicGameInfo.appendChild(h1);
     basicGameInfo.appendChild(h4);
     basicGameInfo.appendChild(img);
-    deals.appendChild(dealH3);
 
     gameInfo.appendChild(basicGameInfo);
 
@@ -127,13 +123,18 @@ function handleGameInfo(game) {
                     price = dealInfo.price;
                     retailPrice = dealInfo.retailPrice;
                     savingsPrice = parseFloat(dealInfo.savings).toFixed(2);
-                    console.log(storeName);
-                    console.log(storeImage);
-                    console.log(dealID);
-                    console.log(price);
-                    console.log(retailPrice);
-                    console.log(savingsPrice);
+                    
+                    if (savingsPrice !== 0) {
+                        const h5 = document.createElement("h5");
+                        h5.textContent = storeName;
+                        specificGameDeal.appendChild(h5);
 
+                        const img = document.createElement("img");
+                        img.src = storeImage;
+                        specificGameDeal.appendChild(img);
+
+                        deals.appendChild(specificGameDeal);
+                    }
                 }
             }
         }
