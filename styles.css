@@ -57,6 +57,7 @@ button {
     padding: 12px;
     grid-gap: 12px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: min-content;
 }
 
 body {
@@ -90,8 +91,28 @@ h4 {
     border-radius: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
+    background-image: linear-gradient(#4286f4, #5B86E5);
+    margin-bottom: 15px;
 }
 
 #basic-game-info img {
     border-radius: 5px;
+}
+
+#deals h3 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+#deals {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    padding-top: 5px;
+}
+
+.game-deal-info {
+    border: solid black;
+    border-radius: 15px;
+    background-image: linear-gradient(#86fde8, #acb6e5);
 }
