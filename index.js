@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         storesArray = data;
     })
     .catch(error => {
-        console.log("ERROR:", error);
+        console.log("ERROR:", error); 
     })
 })
 
@@ -114,7 +114,9 @@ function handleGameInfo(game) {
 
     // handles all of the deal objects within the deals array
     arrayOfDeals.forEach(dealInfo => {
-        handleDeal(dealInfo);
+        dealInfo => {
+            console.log(dealInfo);
+        }
     })
 
     gameInfo.appendChild(deals);
@@ -122,8 +124,4 @@ function handleGameInfo(game) {
     console.log(game);
     console.log(gameTitle);
     console.log(gameThumbnail);
-}
-
-function handleDeal(deal) {
-    console.log(deal);
 }
