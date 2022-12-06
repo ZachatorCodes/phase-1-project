@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(response => response.json())
     .then(data => {
         storesArray = data;
-        console.log(storesArray);
     })
     .catch(error => {
         console.log("ERROR:", error); 
@@ -111,23 +110,33 @@ function handleGameInfo(game) {
 
     // handles all of the deal objects within the deals array
     arrayOfDeals.forEach(dealInfo => {
-        let storeName, storeImage, dealID, price, retailPrice, savingsPrice;
         const specificGameDeal = document.createElement("div");
         specificGameDeal.classList.add("game-deal-info");
         for (store of storesArray) {
             if (store.isActive === 1) {
                 if (dealInfo.storeID === store.storeID) {
-                    storeName = store.storeName;
-                    storeImage = `https://www.cheapshark.com/${store.images.banner}`;
-                    dealID = dealInfo.dealID;
-                    price = dealInfo.price;
-                    retailPrice = dealInfo.retailPrice;
-                    savingsPrice = parseFloat(dealInfo.savings).toFixed(2);
-                    
-                    if (savingsPrice !== 0) {
+                    const storeName = store.storeName;
+                    const storeImage = `https://www.cheapshark.com/${store.images.banner}`;
+                    const dealID = dealInfo.dealID;
+                    const price = dealInfo.price;
+                    const retailPrice = dealInfo.retailPrice;
+                    const savingsPercent = parseFloat(dealInfo.savings).toFixed(2);
+                    if (savingsPercent != 0) {
                         const img = document.createElement("img");
                         img.src = storeImage;
                         specificGameDeal.appendChild(img);
+
+                        const p1 = document.createElement("p");
+                        p1.textContent = `Current Price: $${price}`;
+                        specificGameDeal.appendChild(p1);
+
+                        const p2 = document.createElement("p");
+                        p2.textContent = `Retail Price: $${retailPrice}`;
+                        specificGameDeal.appendChild(p2);
+
+                        const p3 = document.createElement("p");
+                        p3.textContent = `Discount: ${savingsPercent}%`;
+                        specificGameDeal.appendChild(p3);
 
                         deals.appendChild(specificGameDeal);
                     }
@@ -137,8 +146,4 @@ function handleGameInfo(game) {
     })
 
     gameInfo.appendChild(deals);
-
-    console.log(game);
-    console.log(gameTitle);
-    console.log(gameThumbnail);
 }
