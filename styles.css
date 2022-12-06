@@ -2,6 +2,8 @@ h1 {
     text-align: center;
     font-size: 50px;
     margin: 0 0 10px 0;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: #E0E1DD;
 }
 
 input {
@@ -11,9 +13,8 @@ input {
 
 button {
     height: 30px;
-    border: solid gray;
     border-radius: 5px;
-    background-color: #F4EA56;
+    background-color: #AEC3B0;
     font-weight: bold;
 }
 
@@ -25,12 +26,11 @@ button {
 #main {
     padding-top: 10px;
     padding-bottom: 15px;
-    border: solid blue;
+    border: solid #01161E;
     border-radius: 30px;
     margin: 15px auto;
     width: 60%;
-    background-color: #9063CD;
-    box-shadow: 9px 6px 3px #4B365F;
+    background-color: #778DA9;
 }
 
 .game-cards {
@@ -38,7 +38,7 @@ button {
     border-radius: 25px;
     text-align: center;
     word-break: break-word;
-    background-image: linear-gradient(#a8e063, #56ab2f);
+    background-color: #82A3A1;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -61,9 +61,7 @@ button {
 }
 
 body {
-    background-image: linear-gradient(#bdc3c7, #2c3e50);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-color: #124559;
 }
 
 #container {
@@ -83,6 +81,7 @@ body {
 h4 {
     font-size: 22px;
     margin: 0 0 22px 0;
+    color: #E0E1DD;
 }
 
 #basic-game-info {
@@ -90,7 +89,7 @@ h4 {
     border-radius: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-image: linear-gradient(#4286f4, #5B86E5);
+    background-color: #52796f;
     margin-bottom: 15px;
 }
 
@@ -113,6 +112,6 @@ h4 {
 .game-deal-info {
     border: solid black;
     border-radius: 15px;
-    background-image: linear-gradient(#86fde8, #acb6e5);
+    background-color: #97A97C;
     padding: 10px;
 }
