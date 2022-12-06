@@ -37,7 +37,7 @@ function createGameElement(game) {
     // assigns text value to elements
     h2.textContent = gameTitle;
     img.src = gameThumbnail;
-    cheap.textContent = `Cheapest Available Price: ${cheapestPrice}`;
+    cheap.textContent = `Cheapest Available Price: $${cheapestPrice}`;
     clickForMore.textContent = "Click For More";
 
     // appends it all together
@@ -83,7 +83,7 @@ function handleGameInfo(game) {
 
     // sets element text content
     h1.textContent = gameTitle;
-    h4.textContent = `Cheapest Price Ever: ${cheapestPrice}`;
+    h4.textContent = `Cheapest Price Ever: $${cheapestPrice}`;
     img.src = gameThumbnail;
 
     // appends it all together
