@@ -3,6 +3,7 @@ const button = document.getElementById("search-button");
 const searchBar = document.getElementById("search-bar");
 const gameInfo = document.getElementById("game-info");
 
+// gets information about all stores once page loads
 let storesArray;
 document.addEventListener("DOMContentLoaded", () => {
     fetch("https://www.cheapshark.com/api/1.0/stores")
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 })
  
+// searchs games by title
 button.addEventListener("click", e => {
     e.preventDefault();
     const searchText = searchBar.value;
@@ -32,6 +34,7 @@ button.addEventListener("click", e => {
         });
 });
 
+// creates a game element to show search results
 function createGameElement(game) {
     // grabs game information and assigns it to variables
     const gameTitle = game.external;
@@ -111,6 +114,8 @@ function handleGameInfo(game) {
     arrayOfDeals.forEach(dealInfo => {
         const specificGameDeal = document.createElement("div");
         specificGameDeal.classList.add("game-deal-info");
+
+        // loops through stores to make sure a store is active and that the savings is more than 0, then appends info together and appends that to doc
         for (store of storesArray) {
             if (store.isActive === 1) {
                 if (dealInfo.storeID === store.storeID) {
