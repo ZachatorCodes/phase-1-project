@@ -2,13 +2,14 @@ const searchResultsStorage = document.getElementById("search-results");
 const button = document.getElementById("search-button");
 const searchBar = document.getElementById("search-bar");
 const gameInfo = document.getElementById("game-info");
-let storesArray;
 
+let storesArray;
 document.addEventListener("DOMContentLoaded", () => {
     fetch("https://www.cheapshark.com/api/1.0/stores")
     .then(response => response.json())
     .then(data => {
         storesArray = data;
+        console.log(storesArray);
     })
     .catch(error => {
         console.log("ERROR:", error); 
@@ -114,8 +115,19 @@ function handleGameInfo(game) {
 
     // handles all of the deal objects within the deals array
     arrayOfDeals.forEach(dealInfo => {
-        dealInfo => {
-            console.log(dealInfo);
+        let storeName, storeImage
+        
+        const specificGameDeal = document.createElement("div");
+        specificGameDeal.classList.add("game-deal-info");
+
+        for (store of storesArray) {
+            if (store.isActive === 1) {
+                if (dealInfo.storeID === store.storeID) {
+                    storeName = store.storeName;
+                    storeImage = store.images.banner;
+                    console.log(storeName, storeImage);
+                }
+            }
         }
     })
 
