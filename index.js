@@ -91,18 +91,24 @@ function handleGameInfo(game) {
     const img = document.createElement("img");
     const h4 = document.createElement("h4");
     const basicGameInfo = document.createElement("div");
+    const deals = document.createElement("div");
+    const dealH3 = document.createElement("h3");
 
     basicGameInfo.id = "basic-game-info";
+    deals.id = "deals";
 
     // sets element text content
     h1.textContent = gameTitle;
     h4.textContent = `Cheapest Price Ever: $${cheapestPrice}`;
     img.src = gameThumbnail;
+    dealH3.textContent = "Deals";
+    dealH3.style.textDecoration = "underline";
 
     // appends it all together
     basicGameInfo.appendChild(h1);
     basicGameInfo.appendChild(h4);
     basicGameInfo.appendChild(img);
+    deals.appendChild(dealH3);
 
     gameInfo.appendChild(basicGameInfo);
 
@@ -110,6 +116,8 @@ function handleGameInfo(game) {
     arrayOfDeals.forEach(dealInfo => {
         handleDeal(dealInfo);
     })
+
+    gameInfo.appendChild(deals);
 
     console.log(game);
     console.log(gameTitle);
