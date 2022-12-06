@@ -69,7 +69,6 @@ body {
 #container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* grid-gap: 12px; */
 }
 
 #game-info {
@@ -118,4 +117,5 @@ h4 {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 5px;
 }
