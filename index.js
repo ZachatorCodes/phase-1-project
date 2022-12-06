@@ -115,17 +115,25 @@ function handleGameInfo(game) {
 
     // handles all of the deal objects within the deals array
     arrayOfDeals.forEach(dealInfo => {
-        let storeName, storeImage
-        
+        let storeName, storeImage, dealID, price, retailPrice, savingsPrice;
         const specificGameDeal = document.createElement("div");
         specificGameDeal.classList.add("game-deal-info");
-
         for (store of storesArray) {
             if (store.isActive === 1) {
                 if (dealInfo.storeID === store.storeID) {
                     storeName = store.storeName;
-                    storeImage = store.images.banner;
-                    console.log(storeName, storeImage);
+                    storeImage = `https://www.cheapshark.com/${store.images.banner}`;
+                    dealID = dealInfo.dealID;
+                    price = dealInfo.price;
+                    retailPrice = dealInfo.retailPrice;
+                    savingsPrice = parseFloat(dealInfo.savings).toFixed(2);
+                    console.log(storeName);
+                    console.log(storeImage);
+                    console.log(dealID);
+                    console.log(price);
+                    console.log(retailPrice);
+                    console.log(savingsPrice);
+
                 }
             }
         }
