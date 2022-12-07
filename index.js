@@ -3,6 +3,9 @@ const button = document.getElementById("search-button");
 const searchBar = document.getElementById("search-bar");
 const gameInfo = document.getElementById("game-info");
 
+button.addEventListener("mouseenter", changeColor);
+button.addEventListener("mouseleave", revertColor);
+
 // gets information about all stores once page loads
 let storesArray;
 document.addEventListener("DOMContentLoaded", () => {
