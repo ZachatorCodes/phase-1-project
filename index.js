@@ -64,12 +64,18 @@ function createGameElement(game) {
   gameDiv.appendChild(clickForMore);
   clickForMore.addEventListener("click", findGameInfo);
   clickForMore.addEventListener("mouseenter", changeColor);
+  clickForMore.addEventListener("mouseleave", revertColor);
   searchResultsStorage.appendChild(gameDiv);
 }
 
 function changeColor(event) {
   const cardButton = event.target;
-  console.log(cardButton);
+  cardButton.style["background-color"] = "#000";
+}
+
+function revertColor(event) {
+  const cardButton = event.target;
+  cardButton.style["background-color"] = "#aec3b0";
 }
 
 // handles fetching game info for clicked on game
