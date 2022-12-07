@@ -70,12 +70,14 @@ function createGameElement(game) {
 
 function changeColor(event) {
   const cardButton = event.target;
-  cardButton.style["background-color"] = "#000";
+  cardButton.style["background-color"] = "#415d43";
+  cardButton.style.color = "#b0c4b1";
 }
 
 function revertColor(event) {
   const cardButton = event.target;
   cardButton.style["background-color"] = "#aec3b0";
+  cardButton.style.color = "black";
 }
 
 // handles fetching game info for clicked on game
@@ -156,6 +158,8 @@ function handleGameInfo(game) {
 
             const dealButton = document.createElement("button");
             dealButton.textContent = "Visit Deal";
+            dealButton.addEventListener("mouseenter", changeColor);
+            dealButton.addEventListener("mouseleave", revertColor);
             dealButton.addEventListener("click", () => {
               window
                 .open(
