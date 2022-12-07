@@ -16,13 +16,6 @@ Steam Game Sale (SGS) Search App is an application that can be used to find the 
 
 ![](./images/dealResults.png)
 
-## Contributing
+## API
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+To build this application, the [CheapShark API](https://apidocs.cheapshark.com/#intro) was used. As requested by the API creator, all redirects to specific deals are done so through CheapShark's specific redirect URL. Many thanks to CheapShark for creating such a helpful API!
