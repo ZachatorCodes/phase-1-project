@@ -63,7 +63,13 @@ function createGameElement(game) {
   gameDiv.appendChild(cheap);
   gameDiv.appendChild(clickForMore);
   clickForMore.addEventListener("click", findGameInfo);
+  clickForMore.addEventListener("mouseenter", changeColor);
   searchResultsStorage.appendChild(gameDiv);
+}
+
+function changeColor(event) {
+  const cardButton = event.target;
+  console.log(cardButton);
 }
 
 // handles fetching game info for clicked on game
