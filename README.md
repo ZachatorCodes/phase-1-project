@@ -14,6 +14,8 @@ Steam Game Sale (SGS) Search App is an application that can be used to find the 
 
 - Each game card should have a button attached to it, opening up more information about the selected game, including the cheapest ever price it has been sold for. If there are any active deals, they will show up below this extra game information. If no deals are visible, there are currently no sales going on for the selected game.
 
+![](./images/dealResults.png)
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
